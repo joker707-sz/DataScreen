@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>{{ show_list_temp[0]["网页名"] }}</title>
+	<script type="text/javascript" src="static/js/jquery.js"></script>
+	<script type="text/javascript" src="static/js/echarts.min.js"></script>
+	<script type="text/javascript" src="static/js/area_echarts.js"></script>
+	<link rel="stylesheet" href="static/css/comon0.css" />
+	<script>
+		$(document).ready(function(){
+			var whei=$(window).width()
+			$("html").css({fontSize:whei/20})
+			$(window).resize(function(){
+				var whei=$(window).width()
+				$("html").css({fontSize:whei/20})
+			});
+		});
+	</script>
+	<!--
+	<script>
+		alert("地图模块本地需要在iis环境下运行 \n请先搭建iis服务否则不能看到地图")
+	</script>
+	-->
+</head>
+<body>
+<div class="loading">
+	<div class="loadbox">
+		<img src="static/images/loading.gif" /> 页面加载中...
+	</div>
+</div>
+<div class="canvas" style="opacity: .2">
+	<iframe frameborder="0" src="static/js/effect.html" style="width: 100%; height: 100%"></iframe>
+</div>
+<div class="head">
+	<h1>{{ show_list_temp[0]["大屏标题"] }}</h1>
+	<div class="weather">
+		<span>{{ show_list_temp[0]["天气"] }}</span>
+		<span id="showTime"></span>
+	</div>
+	<script>
+		var t = null;
+		t = setTimeout(time,1000);//開始运行
+		function time()
+		{
+			clearTimeout(t);//清除定时器
+			dt = new Date();
+			var y=dt.getFullYear();
+			var mt=dt.getMonth()+1;
+			var day=dt.getDate();
+			var h=dt.getHours();//获取时
+			var m=dt.getMinutes();//获取分
+			var s=dt.getSeconds();//获取秒
+			document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"日"+h+"时"+m+"分"+s+"秒";
+			t = setTimeout(time,1000); //设定定时器，循环运行
+		}
+
+	</script>
+</div>
+<div class="mainbox">
+	<ul class="clearfix">
+		<li>
+			<div class="boxall">
+				<div class="alltitle">
+					{{ show_list_temp[1]["标题"] }}
+				</div>
+				<div class="sycm">
+					<ul class="clearfix">
+						<li> <h2>{{ show_list_temp[1]["数值"][0] }}</h2> <span>{{ show_list_temp[1]["内容"][0] }}</span></li>
+						<li> <h2>{{ show_list_temp[1]["数值"][1] }}</h2> <span>{{ show_list_temp[1]["内容"][1] }}</span></li>
+						<li> <h2>{{ show_list_temp[1]["数值"][2] }}</h2> <span>{{ show_list_temp[1]["内容"][2] }}</span></li>
+					</ul>
+				</div>
+				<div class="boxfoot"></div>
+			</div>
+			<div class="boxall">
+				<div class="alltitle alltitle2">
+					{{ show_list_temp[2]["标题"] }}
+				</div>
+				<ul class="tabnav">
+					<li style=" height: auto;">
+						<div class="gdhead">
+							<span>{{ show_list_temp[2]["列"][0] }}</span>
+							<span>{{ show_list_temp[2]["列"][1] }}</span>
+							<span>{{ show_list_temp[2]["列"][2] }}</span>
+							<span>{{ show_list_temp[2]["列"][3] }}</span>
+							<span>{{ show_list_temp[2]["列"][4] }}</span>
+							<span>{{ show_list_temp[2]["列"][5] }}</span>
+						</div>
+						<div class="scrollDiv" style=" height:1.63rem">
+							<ul class="smjl">
+								{% for slt in show_list_temp[2]["保单"] %}
+									<li><span>{{ slt["网点名称"] }}</span><span>{{ slt["部门"] }}</span><span>{{ slt["年限"] }}</span><span>{{ slt["年缴(万元)"] }}</span><span>{{ slt["标保(万元)"] }}</span><span>{{ slt["时间"] }}</span></li>
+        						{% endfor %}
+							</ul>
+						</div></li>
+				</ul>
+				<div class="boxfoot"></div>
+			</div>
+			<div class="boxall">
+				<div class="alltitle">
+					{{ show_list_temp[3]["标题"] }}
+				</div>
+				<div style="height: 3.47rem" id="echart1"></div>
+				<div class="boxfoot">
+				</div>
+			</div> </li>
+		<li>
+			<div class="map">
+				<div class="map1">
+					<img src="static/images/lbx.png" />
+				</div>
+				<div class="map2">
+					<img src="static/images/jt.png" />
+				</div>
+				<div class="map3">
+					<img src="static/images/map.png" />
+				</div>
+				<div class="map4" id="map_1">
+				</div>
+			</div>
+			<div class="boxall">
+				<div class="alltitle">
+					{{ show_list_temp[4]["标题"] }}
+				</div>
+				<div class="allnav" style="height: 1.86rem; " id="echart2">
+				</div>
+				<div class="boxfoot"></div>
+			</div> </li>
+		<li>
+			<div class="boxall" style="height: 6.3rem">
+				<div class="alltitle ">
+					{{ show_list_temp[5]["标题"] }}
+				</div>
+				<div class=" alltitle2">
+					{{ show_list_temp[5]["表一"][0] }}
+					<div class="titabs">
+						<a class="active jsy1" href="">{{ show_list_temp[5]["表一"][1] }}</a>
+						<a class="jsy2" href="">{{ show_list_temp[5]["表一"][2] }}</a>
+						<a class="jsy3" href="">{{ show_list_temp[5]["表一"][3] }}</a>
+					</div>
+				</div>
+				<div class="allnav2" id="echart21" style="height: 22%"></div>
+				<div class=" alltitle2">
+					{{ show_list_temp[5]["表二"][0] }}
+					<div class="titabs">
+						<a class="active tr01" href="">{{ show_list_temp[5]["表二"][1] }}</a>
+						<a class="tr02" href="">{{ show_list_temp[5]["表二"][2] }} </a>
+						<a class="tr03" href="">{{ show_list_temp[5]["表二"][3] }}</a>
+					</div>
+				</div>
+				<div class="allnav2" id="echart22" style="height: 22%"></div>
+				<div class=" alltitle2">
+					{{ show_list_temp[5]["表三"][0] }}
+					<div class="titabs">
+						<a class="active st01" href="">{{ show_list_temp[5]["表三"][1] }}</a>
+						<a class="st02" href="">{{ show_list_temp[5]["表三"][2] }} </a>
+						<a class="st03" href="">{{ show_list_temp[5]["表三"][3] }}</a>
+					</div>
+				</div>
+				<div class="allnav2" id="echart23" style="height: 22%"></div>
+				<div class="boxfoot"></div>
+			</div>
+			<div class="boxall" style="height: 2.6rem;">
+				<div class="alltitle">
+					{{ show_list_temp[6]["标题"] }}
+				</div>
+					<div class="boxnav" id="echart3" style="height:calc(100% - .3rem);"></div>
+				<div class="boxfoot"></div>
+			</div> </li>
+	</ul>
+</div>
+<div class="back"></div>
+<!--<meta http-equiv="refresh" content="60" />-->
+<script language="JavaScript" src="static/js/js.js"></script>
+<script src="static/js/jquery.liMarquee.js"></script>
+<script>
+	$('.jsy1, .jsy2, .jsy3').click(function(e) {
+		e.preventDefault();
+		// 移除同组所有标签的active类
+		$(this).siblings().removeClass('active');
+		// 给当前点击的标签添加active类
+		$(this).addClass('active');
+		
+		// 根据点击的标签更新图表数据
+		if ($(this).hasClass('jsy1')) {
+			// 更新为第一种数据
+			updateChart21('jsy1_data');
+		} else if ($(this).hasClass('jsy2')) {
+			// 更新为第二种数据
+			updateChart21('jsy2_data');
+		} else {
+			// 更新为第三种数据
+			updateChart21('jsy3_data');
+		}
+	});
+
+	$('.tr01, .tr02, .tr03').click(function(e) {
+		e.preventDefault();
+		// 移除同组所有标签的active类
+		$(this).siblings().removeClass('active');
+		// 给当前点击的标签添加active类
+		$(this).addClass('active');
+		
+		// 根据点击的标签更新图表数据
+		if ($(this).hasClass('tr01')) {
+			// 更新为第一种数据
+			updateChart22('tr01_data');
+		} else if ($(this).hasClass('tr02')) {
+			// 更新为第二种数据
+			updateChart22('tr02_data');
+		} else {
+			// 更新为第三种数据
+			updateChart22('tr03_data');
+		}
+	});
+
+	$('.st01, .st02, .st03').click(function(e) {
+		e.preventDefault();
+		// 移除同组所有标签的active类
+		$(this).siblings().removeClass('active');
+		// 给当前点击的标签添加active类
+		$(this).addClass('active');
+		
+		// 根据点击的标签更新图表数据
+		if ($(this).hasClass('st01')) {
+			// 更新为第一种数据
+			updateChart23('st01_data');
+		} else if ($(this).hasClass('st02')) {
+			// 更新为第二种数据
+			updateChart23('st02_data');
+		} else {
+			// 更新为第三种数据
+			updateChart23('st03_data');
+		}
+	});
+	
+	$(function(){
+		$('.scrollDiv').liMarquee({
+			direction: 'up',
+			scrollamount: 30,
+			runshort: false
+		});
+	});
+</script>
+</body>
+</html>
