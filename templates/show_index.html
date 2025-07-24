@@ -175,6 +175,40 @@
 <script language="JavaScript" src="static/js/js.js"></script>
 <script src="static/js/jquery.liMarquee.js"></script>
 <script>
+	$(document).ready(function() {
+		let dataIndex_a = dataIndex_b = dataIndex_c = 0;
+		// 定义数据类型数组，与标签类名对应
+		const dataTypes_a = ['jsy1_data', 'jsy2_data', 'jsy3_data'];
+		const dataTypes_b = ['tr01_data', 'tr02_data', 'tr03_data'];
+		const dataTypes_c = ['st01_data', 'st02_data', 'st03_data'];
+		// 定义标签选择器数组
+		const selectors_a = ['.jsy1', '.jsy2', '.jsy3'];
+		const selectors_b = ['.tr01', '.tr02', '.tr03'];
+		const selectors_c = ['.st01', '.st02', '.st03'];
+
+		// 定时刷新函数，每5秒切换一次（5000毫秒）
+		setInterval(function() 
+		{
+			// 移除所有标签的active类
+			$(selectors_a.join(',')).removeClass('active');
+			$(selectors_b.join(',')).removeClass('active');
+			$(selectors_c.join(',')).removeClass('active');
+			// 给当前索引对应的标签添加active类
+			$(selectors_a[dataIndex_a]).addClass('active');
+			$(selectors_b[dataIndex_b]).addClass('active');
+			$(selectors_c[dataIndex_c]).addClass('active');
+			// 更新图表数据
+			updateChart21(dataTypes_a[dataIndex_a]);
+			updateChart22(dataTypes_b[dataIndex_b]);
+			updateChart23(dataTypes_c[dataIndex_c]);
+			
+			// 更新索引，循环切换（0→1→2→0...）
+			dataIndex_a = (dataIndex_a + 1) % dataTypes_a.length;
+			dataIndex_b = (dataIndex_b + 1) % dataTypes_b.length;
+			dataIndex_c = (dataIndex_c + 1) % dataTypes_c.length;
+		}, 3000); // 5000毫秒 = 5秒，可根据需要调整时间间隔
+	})
+
 	$('.jsy1, .jsy2, .jsy3').click(function(e) {
 		e.preventDefault();
 		// 移除同组所有标签的active类
