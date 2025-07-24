@@ -2,30 +2,37 @@
 
 const data_list =
 [
-    //echarts_21
     [                                                                       
         ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12'],
         //echarts_211
-        [503, 660, 300,520,720, 513, 430, 860, 530,730, 930, 830],
+        [503, 660, 300, 520, 720, 513, 430, 860, 530, 730, 930, 830],
         //echarts_212
-        [503, 660, 300,520,720, 513, 430, 860, 530,730, 930, 830],
+        [305, 260, 130, 250, 270, 153, 340, 680, 350, 370, 390, 380],
         //echarts_213
-        [503, 660, 300,520,720, 513, 430, 860, 530,730, 930, 830],
+        [80, 120, 60, 70, 90, 63, 70, 140, 80, 100, 120, 110],
     ],
-    //echarts_22
     [                                                                       
         ['第一季度', '第二季度', '第三季度', '第四季度'],
+        //echarts_221
         [56, 73, 63, 51],
+        //echarts_222
+        [33, 27, 18, 35],
+        //echarts_223
+        [19, 26, 37, 43],
     ],
-    //echarts_23
     [
         ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12'],
+        //echarts_231
         [35, 47, 43, 39, 41, 51, 31, 35, 29, 41, 45, 49],
+        //echarts_232
+        [53, 74, 34, 93, 14, 15, 13, 53, 92, 14, 54, 94],
+        //echarts_233
+        [38, 41, 37, 42, 35, 36, 34, 38, 41, 35, 39, 43],
     ],
     //echarts_1
     [
         ['苏州张家港营服','苏州吴江支公司','苏州昆山支公司','苏州太仓营服','苏州分公司','苏州常熟营服',],
-        [1705, 2112, 3235, 4310, 4981, 9867],
+        [205, 252, 435, 510, 681, 1267],
     ],
     //echarts_2
     [
@@ -47,19 +54,37 @@ const data_list =
 $(
     function () 
     {
-        echarts_21();
-        echarts_22();
-        echarts_23();
+        echarts_211();
+        echarts_212();
+        echarts_213();
+        echarts_221();
+        echarts_222();
+        echarts_223();
+        echarts_231();
+        echarts_232();
+        echarts_233();
         echarts_1();
         echarts_2();
         echarts_3();
 
 
-        function echarts_21() 
+        function echarts_211() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart21'));
-            option1 = 
+            const domElement = document.getElementById('echart211');
+            // 基于准备好的dom，初始化echarts实例
+            if (!domElement) 
+            {
+                console.error('DOM元素不存在:echart211');
+            }
+            else
+            {
+                // 存在则初始化图表
+                var myChart = echarts.init(domElement);
+                console.error('DOM元素存在:echart211');
+            }
+            //var myChart = echarts.init(document.getElementById('echart211'));
+            option_211 = 
             {
                 tooltip:
                 {
@@ -163,7 +188,7 @@ $(
             };
         
             // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option1);
+            myChart.setOption(option_211);
             window.addEventListener
             (
                 "resize",function()
@@ -173,11 +198,270 @@ $(
             );
         }
 
-        function echarts_22() 
+        function echarts_212() 
+        {
+            const domElement = document.getElementById('echart212');
+            // 基于准备好的dom，初始化echarts实例
+            if (!domElement) 
+            {
+                console.error('DOM元素不存在:echart212');
+            }
+            else
+            {
+                // 存在则初始化图表
+                var myChart = echarts.init(domElement);
+                console.error('DOM元素存在:echart212');
+            }
+            //var myChart = echarts.init(document.getElementById('echart212'));
+            option_212 = 
+            {
+                tooltip:
+                {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow'}
+                },
+                grid: 
+                {
+                    left: '0%',
+                    top:'10px',
+                    right: '0%',
+                    bottom: '0px',
+                    containLabel: true
+                },
+                xAxis: 
+                [
+                    {
+                        type: 'category',
+                        data: data_list[0][0],
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLabel:  
+                        {
+                            interval: 0,
+                        // rotate:50,
+                            show: true,
+                            splitNumber: 15,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                    }
+                ],
+                yAxis: 
+                [
+                    {
+                        type: 'value',
+                        axisLabel: 
+                        {
+                        //formatter: '{value} %'
+                            show:true,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1	)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        splitLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                            }
+                        }
+                    }
+                ],
+                series: 
+                [
+                    {
+                        type: 'line',
+                        data: data_list[0][2],
+                        itemStyle: 
+                        {
+                            normal: 
+                            {
+                                color:'#37a3ff',
+                                opacity: 1,
+                                BorderRadius: 3,
+                            }
+                        }
+                    }
+                ]
+            };
+        
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option_212);
+            window.addEventListener
+            (
+                "resize",function()
+                {
+                    myChart.resize();
+                }
+            );
+        }
+
+        function echarts_213() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart22'));
-            option1 = 
+            const domElement = document.getElementById('echart213');
+            // 基于准备好的dom，初始化echarts实例
+            if (!domElement) 
+            {
+                console.error('DOM元素不存在:echart213');
+            }
+            else
+            {
+                // 存在则初始化图表
+                var myChart = echarts.init(domElement);
+                console.error('DOM元素存在:echart213');
+            }
+            //var myChart = echarts.init(document.getElementById('echart213'));
+            option_213 = 
+            {
+                tooltip:
+                {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow'}
+                },
+                grid: 
+                {
+                    left: '0%',
+                    top:'10px',
+                    right: '0%',
+                    bottom: '0px',
+                    containLabel: true
+                },
+                xAxis: 
+                [
+                    {
+                        type: 'category',
+                        data: data_list[0][0],
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLabel:  
+                        {
+                            interval: 0,
+                        // rotate:50,
+                            show: true,
+                            splitNumber: 15,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                    }
+                ],
+                yAxis: 
+                [
+                    {
+                        type: 'value',
+                        axisLabel: 
+                        {
+                        //formatter: '{value} %'
+                            show:true,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1	)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        splitLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                            }
+                        }
+                    }
+                ],
+                series: 
+                [
+                    {
+                        type: 'line',
+                        data: data_list[0][3],
+                        itemStyle: 
+                        {
+                            normal: 
+                            {
+                                color:'#37a3ff',
+                                opacity: 1,
+                                BorderRadius: 3,
+                            }
+                        }
+                    }
+                ]
+            };
+        
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option_213);
+            window.addEventListener
+            (
+                "resize",function()
+                {
+                    myChart.resize();
+                }
+            );
+        }
+
+        function echarts_221() 
+        {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echart221'));
+            option_221 = 
             {
                 //backgroundColor: '#00265f',
                 tooltip:
@@ -281,7 +565,7 @@ $(
                 ]
             };
             // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option1);
+            myChart.setOption(option_221);
             window.addEventListener
             (
                 "resize",function()
@@ -291,11 +575,247 @@ $(
             );
         }
 
-        function echarts_23() 
+        function echarts_222() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart23'));
-            option1 = 
+            var myChart = echarts.init(document.getElementById('echart222'));
+            option_222 = 
+            {
+                //backgroundColor: '#00265f',
+                tooltip:
+                {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow'}
+                },
+                grid:
+                {
+                    left: '0%',
+                    top:'10px',
+                    right: '0%',
+                    bottom: '0px',
+                    containLabel: true
+                },
+                xAxis: 
+                [
+                    {
+                        type: 'category',
+                        data: data_list[1][0],
+                        axisLine:
+                        {
+                            show: true,
+                            lineStyle:
+                            {
+                                color: "rgba(255,255,255,.1)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        axisTick:
+                        {
+                            show: false,
+                        },
+                        axisLabel:
+                        {
+                            interval: 0,
+                            // rotate:50,
+                            show: true,
+                            splitNumber: 15,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                    }
+                ],
+                yAxis: 
+                [
+                    {
+                        type: 'value',
+                        axisLabel: 
+                        {
+                            //formatter: '{value} %'
+                            show:true,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle:
+                            {
+                                color: "rgba(255,255,255,.1	)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        splitLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                            }
+                        }
+                    }
+                ],
+                series: 
+                [
+                    {
+                        type: 'line',
+                        data: data_list[1][2],
+                        itemStyle:
+                        {
+                            normal:
+                            {
+                                color:'#37a3ff',
+                                opacity: 1,
+                                barBorderRadius: 3,
+                            }
+                        }
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option_222);
+            window.addEventListener
+            (
+                "resize",function()
+                {
+                    myChart.resize();
+                }
+            );
+        }
+
+function echarts_223() 
+        {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echart223'));
+            option_223 = 
+            {
+                //backgroundColor: '#00265f',
+                tooltip:
+                {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow'}
+                },
+                grid:
+                {
+                    left: '0%',
+                    top:'10px',
+                    right: '0%',
+                    bottom: '0px',
+                    containLabel: true
+                },
+                xAxis: 
+                [
+                    {
+                        type: 'category',
+                        data: data_list[1][0],
+                        axisLine:
+                        {
+                            show: true,
+                            lineStyle:
+                            {
+                                color: "rgba(255,255,255,.1)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        axisTick:
+                        {
+                            show: false,
+                        },
+                        axisLabel:
+                        {
+                            interval: 0,
+                            // rotate:50,
+                            show: true,
+                            splitNumber: 15,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                    }
+                ],
+                yAxis: 
+                [
+                    {
+                        type: 'value',
+                        axisLabel: 
+                        {
+                            //formatter: '{value} %'
+                            show:true,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle:
+                            {
+                                color: "rgba(255,255,255,.1	)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        splitLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                            }
+                        }
+                    }
+                ],
+                series: 
+                [
+                    {
+                        type: 'line',
+                        data: data_list[1][3],
+                        itemStyle:
+                        {
+                            normal:
+                            {
+                                color:'#37a3ff',
+                                opacity: 1,
+                                barBorderRadius: 3,
+                            }
+                        }
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option_223);
+            window.addEventListener
+            (
+                "resize",function()
+                {
+                    myChart.resize();
+                }
+            );
+        }
+
+        function echarts_231() 
+        {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echart231'));
+            option_231 = 
             {
                 //backgroundColor: '#00265f',
                 tooltip: 
@@ -400,7 +920,245 @@ $(
                 ]
             };
             // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option1);
+            myChart.setOption(option_231);
+            window.addEventListener
+            (
+                "resize",function()
+                {
+                    myChart.resize();
+                }
+            );
+        }
+
+        function echarts_232() 
+        {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echart232'));
+            option_232 = 
+            {
+                //backgroundColor: '#00265f',
+                tooltip: 
+                {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow'}
+                },
+                grid: 
+                {
+                    left: '0%',
+                    top:'10px',
+                    right: '0%',
+                    bottom: '0px',
+                    containLabel: true
+                },
+                xAxis: 
+                [
+                    {
+                        type: 'category',
+                        data: data_list[2][0],
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle:
+                            {
+                                color: "rgba(255,255,255,.1)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+            
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLabel:  
+                        {
+                            interval: 0,
+                        // rotate:50,
+                            show: true,
+                            splitNumber: 15,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                    }
+                ],
+                yAxis: 
+                [
+                    {
+                        type: 'value',
+                        axisLabel: 
+                        {
+                            //formatter: '{value} %'
+                            show:true,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1	)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        splitLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                            }
+                        }
+                    }
+                ],
+                series: 
+                [
+                    {
+                        type: 'line',
+                        data: data_list[2][2],
+                        itemStyle: 
+                        {
+                            normal: 
+                            {
+                                color:'#37a3ff',
+                                opacity: 1,
+                                barBorderRadius: 3,
+                            }
+                        }
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option_232);
+            window.addEventListener
+            (
+                "resize",function()
+                {
+                    myChart.resize();
+                }
+            );
+        }
+
+        function echarts_233() 
+        {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echart233'));
+            option_233 = 
+            {
+                //backgroundColor: '#00265f',
+                tooltip: 
+                {
+                    trigger: 'axis',
+                    axisPointer: { type: 'shadow'}
+                },
+                grid: 
+                {
+                    left: '0%',
+                    top:'10px',
+                    right: '0%',
+                    bottom: '0px',
+                    containLabel: true
+                },
+                xAxis: 
+                [
+                    {
+                        type: 'category',
+                        data: data_list[2][0],
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle:
+                            {
+                                color: "rgba(255,255,255,.1)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+            
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLabel:  
+                        {
+                            interval: 0,
+                        // rotate:50,
+                            show: true,
+                            splitNumber: 15,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                    }
+                ],
+                yAxis: 
+                [
+                    {
+                        type: 'value',
+                        axisLabel: 
+                        {
+                            //formatter: '{value} %'
+                            show:true,
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize: '12',
+                            },
+                        },
+                        axisTick: 
+                        {
+                            show: false,
+                        },
+                        axisLine: 
+                        {
+                            show: true,
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1	)",
+                                width: 1,
+                                type: "solid"
+                            },
+                        },
+                        splitLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: "rgba(255,255,255,.1)",
+                            }
+                        }
+                    }
+                ],
+                series: 
+                [
+                    {
+                        type: 'line',
+                        data: data_list[2][3],
+                        itemStyle: 
+                        {
+                            normal: 
+                            {
+                                color:'#37a3ff',
+                                opacity: 1,
+                                barBorderRadius: 3,
+                            }
+                        }
+                    }
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option_233);
             window.addEventListener
             (
                 "resize",function()

@@ -43,6 +43,9 @@ a:hover{ color:#06c; text-decoration: none!important}
 .loadbox img{ margin:10px auto; display:block; width:40px;}
 
 .allnav{height: calc(100% - 30px);}
+
+.allnav2{height: 22%;display: none;}
+.allnav2.active{display: block;}
  
 .copyright{ background:rgba(19,31,64,.32); border: 1px solid rgba(255,255,255,.05); line-height:.5rem; text-align: center; padding-right: 15px; bottom: 0; color:rgba(255,255,255,.7); font-size: .16rem; }
 
@@ -70,6 +73,7 @@ a:hover{ color:#06c; text-decoration: none!important}
 .alltitle2{  line-height: .5rem; position: relative}
 .alltitle2 a{ font-size:.2rem; color:#fff;  opacity: .6; padding:  .05rem .1rem;}
 .alltitle2 a.active{ border-bottom: 1px solid rgba(255,255,255,.2); opacity: 1}
+
 
 .boxfoot{ position:absolute; bottom: 0; width: 100%; left: 0;}
 .boxfoot:before,

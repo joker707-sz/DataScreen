@@ -140,7 +140,9 @@
 						<a class="jsy3" href="">{{ show_list_temp[5]["表一"][3] }}</a>
 					</div>
 				</div>
-				<div class="allnav2" id="echart21" style="height: 22%"></div>
+				<div class="active allnav2" id="echart211"></div>
+				<div class="active allnav2" id="echart212"></div>
+				<div class="active allnav2" id="echart213"></div>
 				<div class=" alltitle2">
 					{{ show_list_temp[5]["表二"][0] }}
 					<div class="titabs">
@@ -149,7 +151,9 @@
 						<a class="tr03" href="">{{ show_list_temp[5]["表二"][3] }}</a>
 					</div>
 				</div>
-				<div class="allnav2" id="echart22" style="height: 22%"></div>
+				<div class="active allnav2" id="echart221"></div>
+				<div class="active allnav2" id="echart222"></div>
+				<div class="active allnav2" id="echart223"></div>
 				<div class=" alltitle2">
 					{{ show_list_temp[5]["表三"][0] }}
 					<div class="titabs">
@@ -158,7 +162,9 @@
 						<a class="st03" href="">{{ show_list_temp[5]["表三"][3] }}</a>
 					</div>
 				</div>
-				<div class="allnav2" id="echart23" style="height: 22%"></div>
+				<div class="active allnav2" id="echart231"></div>
+				<div class="active allnav2" id="echart232"></div>
+				<div class="active allnav2" id="echart233"></div>
 				<div class="boxfoot"></div>
 			</div>
 			<div class="boxall" style="height: 2.6rem;">
@@ -175,17 +181,16 @@
 <script language="JavaScript" src="static/js/js.js"></script>
 <script src="static/js/jquery.liMarquee.js"></script>
 <script>
+	//定时刷新函数
 	$(document).ready(function() {
 		let dataIndex_a = dataIndex_b = dataIndex_c = 0;
-		// 定义数据类型数组，与标签类名对应
-		const dataTypes_a = ['jsy1_data', 'jsy2_data', 'jsy3_data'];
-		const dataTypes_b = ['tr01_data', 'tr02_data', 'tr03_data'];
-		const dataTypes_c = ['st01_data', 'st02_data', 'st03_data'];
 		// 定义标签选择器数组
 		const selectors_a = ['.jsy1', '.jsy2', '.jsy3'];
 		const selectors_b = ['.tr01', '.tr02', '.tr03'];
 		const selectors_c = ['.st01', '.st02', '.st03'];
-
+		const element_a = ['echart211','echart212','echart213'];
+		const element_b = ['echart221','echart222','echart223'];
+		const element_c = ['echart231','echart232','echart233'];
 		// 定时刷新函数，每5秒切换一次（5000毫秒）
 		setInterval(function() 
 		{
@@ -193,29 +198,31 @@
 			$(selectors_a.join(',')).removeClass('active');
 			$(selectors_b.join(',')).removeClass('active');
 			$(selectors_c.join(',')).removeClass('active');
+			$(element_a.map(id => '#' + id).join(',')).removeClass('active');
+			$(element_b.map(id => '#' + id).join(',')).removeClass('active');
+			$(element_c.map(id => '#' + id).join(',')).removeClass('active');
+			// 更新索引，循环切换（0→1→2→0...）
+			dataIndex_a = (dataIndex_a + 1) % 3;
+			dataIndex_b = (dataIndex_b + 1) % 3;
+			dataIndex_c = (dataIndex_c + 1) % 3;
 			// 给当前索引对应的标签添加active类
 			$(selectors_a[dataIndex_a]).addClass('active');
 			$(selectors_b[dataIndex_b]).addClass('active');
 			$(selectors_c[dataIndex_c]).addClass('active');
-			// 更新图表数据
-			updateChart21(dataTypes_a[dataIndex_a]);
-			updateChart22(dataTypes_b[dataIndex_b]);
-			updateChart23(dataTypes_c[dataIndex_c]);
-			
-			// 更新索引，循环切换（0→1→2→0...）
-			dataIndex_a = (dataIndex_a + 1) % dataTypes_a.length;
-			dataIndex_b = (dataIndex_b + 1) % dataTypes_b.length;
-			dataIndex_c = (dataIndex_c + 1) % dataTypes_c.length;
-		}, 3000); // 5000毫秒 = 5秒，可根据需要调整时间间隔
+			$('#' + element_a[dataIndex_a]).addClass('active');
+			$('#' + element_b[dataIndex_b]).addClass('active');
+			$('#' + element_c[dataIndex_c]).addClass('active');
+		}, 5000); // 5000毫秒 = 5秒，可根据需要调整时间间隔
 	})
 
+	//点击事件函数
 	$('.jsy1, .jsy2, .jsy3').click(function(e) {
 		e.preventDefault();
 		// 移除同组所有标签的active类
 		$(this).siblings().removeClass('active');
 		// 给当前点击的标签添加active类
 		$(this).addClass('active');
-		
+		/*
 		// 根据点击的标签更新图表数据
 		if ($(this).hasClass('jsy1')) {
 			// 更新为第一种数据
@@ -226,7 +233,7 @@
 		} else {
 			// 更新为第三种数据
 			updateChart21('jsy3_data');
-		}
+		}*/
 	});
 
 	$('.tr01, .tr02, .tr03').click(function(e) {
@@ -235,7 +242,7 @@
 		$(this).siblings().removeClass('active');
 		// 给当前点击的标签添加active类
 		$(this).addClass('active');
-		
+		/*
 		// 根据点击的标签更新图表数据
 		if ($(this).hasClass('tr01')) {
 			// 更新为第一种数据
@@ -246,7 +253,7 @@
 		} else {
 			// 更新为第三种数据
 			updateChart22('tr03_data');
-		}
+		}*/
 	});
 
 	$('.st01, .st02, .st03').click(function(e) {
@@ -255,7 +262,7 @@
 		$(this).siblings().removeClass('active');
 		// 给当前点击的标签添加active类
 		$(this).addClass('active');
-		
+		/*
 		// 根据点击的标签更新图表数据
 		if ($(this).hasClass('st01')) {
 			// 更新为第一种数据
@@ -266,7 +273,7 @@
 		} else {
 			// 更新为第三种数据
 			updateChart23('st03_data');
-		}
+		}*/
 	});
 	
 	$(function(){

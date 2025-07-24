@@ -37,18 +37,20 @@ def extract_sheet_data(file_path: str, sheet_name: str = 'Sheet1') -> list:
             
         sheet_data_list.append(sheet_data)
     # 输出结果
+    """
     print(f"\n——————————————————————————\n以下是名为 “{sheet_name}” 的表格中的数据")
     print(f"其中每一列的内容分别为: {', '.join(column_names)}")
     for i, emp in enumerate(sheet_data_list[:5], 1):
         print(f"\n记录 #{i}:")
         for key, value in emp.items():
             print(f"  {key}: {value}")
+    """
     return sheet_data_list
 
 
 # 主函数
 app = Flask(__name__)
-print(f"模板文件夹路径: {app.template_folder}")
+# print(f"模板文件夹路径: {app.template_folder}")
 @app.route('/')
 def index():
     sheet_data_list_1 = extract_sheet_data('excel/业务表单.xlsx', '表一')

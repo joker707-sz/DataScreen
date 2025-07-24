@@ -35,14 +35,14 @@ function echarts_map()
             };
             var goData = 
             [
-                {name: '虎丘区',value: 115},
-                {name: '吴中区',value: 107},
-                {name: '相城区',value: 139},
-                {name: '吴江区',value: 142},
-                {name: '常熟市',value: 197},
-                {name: '张家港市',value: 145},
-                {name: '昆山市',value: 133},
-                {name: '太仓市',value: 101},
+                {name: '虎丘区',value: 1681},
+                {name: '吴中区',value: 1432},
+                {name: '相城区',value: 1768},
+                {name: '吴江区',value: 2152},
+                {name: '常熟市',value: 9867},
+                {name: '张家港市',value: 1705},
+                {name: '昆山市',value: 3235},
+                {name: '太仓市',value: 4010},
             ];
         
             var goTotal=0;//计算总人数
@@ -180,7 +180,7 @@ function echarts_map()
             //  backgroundColor: '#FDF7F2',
                 title: 
                 {
-                    text: '苏州地区数据分布图',
+                    text: '苏州地区本年度营销数据分布图',
                     subtext: '单位:万元',
                     left: 'center',
                     top:'0',
