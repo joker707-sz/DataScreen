@@ -70,20 +70,19 @@ $(
 
         function echarts_211() 
         {
-            // 基于准备好的dom，初始化echarts实例
-            const domElement = document.getElementById('echart211');
-            // 基于准备好的dom，初始化echarts实例
-            if (!domElement) 
+            const chartDom = document.getElementById('echart211');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
             {
-                console.error('DOM元素不存在:echart211');
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
             }
             else
             {
-                // 存在则初始化图表
-                var myChart = echarts.init(domElement);
-                console.error('DOM元素存在:echart211');
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
             }
-            //var myChart = echarts.init(document.getElementById('echart211'));
             option_211 = 
             {
                 tooltip:
@@ -200,19 +199,19 @@ $(
 
         function echarts_212() 
         {
-            const domElement = document.getElementById('echart212');
-            // 基于准备好的dom，初始化echarts实例
-            if (!domElement) 
+            const chartDom = document.getElementById('echart212');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
             {
-                console.error('DOM元素不存在:echart212');
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
             }
             else
             {
-                // 存在则初始化图表
-                var myChart = echarts.init(domElement);
-                console.error('DOM元素存在:echart212');
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
             }
-            //var myChart = echarts.init(document.getElementById('echart212'));
             option_212 = 
             {
                 tooltip:
@@ -329,20 +328,19 @@ $(
 
         function echarts_213() 
         {
-            // 基于准备好的dom，初始化echarts实例
-            const domElement = document.getElementById('echart213');
-            // 基于准备好的dom，初始化echarts实例
-            if (!domElement) 
+            const chartDom = document.getElementById('echart213');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
             {
-                console.error('DOM元素不存在:echart213');
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
             }
             else
             {
-                // 存在则初始化图表
-                var myChart = echarts.init(domElement);
-                console.error('DOM元素存在:echart213');
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
             }
-            //var myChart = echarts.init(document.getElementById('echart213'));
             option_213 = 
             {
                 tooltip:
@@ -460,7 +458,19 @@ $(
         function echarts_221() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart221'));
+            const chartDom = document.getElementById('echart221');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
+            {
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
+            }
+            else
+            {
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
+            }
             option_221 = 
             {
                 //backgroundColor: '#00265f',
@@ -578,7 +588,19 @@ $(
         function echarts_222() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart222'));
+            const chartDom = document.getElementById('echart222');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
+            {
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
+            }
+            else
+            {
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
+            }
             option_222 = 
             {
                 //backgroundColor: '#00265f',
@@ -693,10 +715,22 @@ $(
             );
         }
 
-function echarts_223() 
+        function echarts_223() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart223'));
+            const chartDom = document.getElementById('echart223');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
+            {
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
+            }
+            else
+            {
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
+            }
             option_223 = 
             {
                 //backgroundColor: '#00265f',
@@ -814,7 +848,19 @@ function echarts_223()
         function echarts_231() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart231'));
+            const chartDom = document.getElementById('echart231');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
+            {
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
+            }
+            else
+            {
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
+            }
             option_231 = 
             {
                 //backgroundColor: '#00265f',
@@ -933,7 +979,19 @@ function echarts_223()
         function echarts_232() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart232'));
+            const chartDom = document.getElementById('echart232');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
+            {
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
+            }
+            else
+            {
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
+            }
             option_232 = 
             {
                 //backgroundColor: '#00265f',
@@ -1052,7 +1110,19 @@ function echarts_223()
         function echarts_233() 
         {
             // 基于准备好的dom，初始化echarts实例
-            var myChart = echarts.init(document.getElementById('echart233'));
+            const chartDom = document.getElementById('echart233');
+            let myChart = chartDom.myChart; // 缓存到DOM元素的属性中
+            if (!myChart)
+            {
+                // 首次初始化时创建实例
+                myChart = echarts.init(chartDom);
+                chartDom.myChart = myChart; // 缓存实例
+            }
+            else
+            {
+                // 非首次调用时，清除旧数据（触发动画）
+                myChart.clear();
+            }
             option_233 = 
             {
                 //backgroundColor: '#00265f',
@@ -1623,7 +1693,134 @@ function echarts_223()
                 myChart.resize();
                 }
             );
-        } 
+        }
+
+//定时刷新函数
+        $(document).ready(function()
+        {
+            let dataIndex_a = dataIndex_b = dataIndex_c = 0;
+            // 定义标签选择器数组
+            const selectors_a = ['.jsy1', '.jsy2', '.jsy3'];
+            const selectors_b = ['.tr01', '.tr02', '.tr03'];
+            const selectors_c = ['.st01', '.st02', '.st03'];
+            const element_a = ['echart211','echart212','echart213'];
+            const element_b = ['echart221','echart222','echart223'];
+            const element_c = ['echart231','echart232','echart233'];
+
+            //先初始化一次
+            $(element_a.map(id => '#' + id).join(',')).removeClass('active');
+            $(element_b.map(id => '#' + id).join(',')).removeClass('active');
+            $(element_c.map(id => '#' + id).join(',')).removeClass('active');
+            $('#' + element_a[dataIndex_a]).addClass('active');
+            $('#' + element_b[dataIndex_b]).addClass('active');
+            $('#' + element_c[dataIndex_c]).addClass('active');
+
+            // 定时刷新函数，每5秒切换一次（5000毫秒）
+            setInterval(function() 
+            {
+                // 移除所有标签的active类
+                $(selectors_a.join(',')).removeClass('active');
+                $(selectors_b.join(',')).removeClass('active');
+                $(selectors_c.join(',')).removeClass('active');
+                $(element_a.map(id => '#' + id).join(',')).removeClass('active');
+                $(element_b.map(id => '#' + id).join(',')).removeClass('active');
+                $(element_c.map(id => '#' + id).join(',')).removeClass('active');
+                // 更新索引，循环切换（0→1→2→0...）
+                dataIndex_a = (dataIndex_a + 1) % 3;
+                dataIndex_b = (dataIndex_b + 1) % 3;
+                dataIndex_c = (dataIndex_c + 1) % 3;
+                // 给当前索引对应的标签添加active类
+                $(selectors_a[dataIndex_a]).addClass('active');
+                $(selectors_b[dataIndex_b]).addClass('active');
+                $(selectors_c[dataIndex_c]).addClass('active');
+                $('#' + element_a[dataIndex_a]).addClass('active');
+                $('#' + element_b[dataIndex_b]).addClass('active');
+                $('#' + element_c[dataIndex_c]).addClass('active');
+                echarts_211();
+                echarts_212();
+                echarts_213();
+                echarts_221();
+                echarts_222();
+                echarts_223();
+                echarts_231();
+                echarts_232();
+                echarts_233();
+            }, 10000); // 5000毫秒 = 5秒，可根据需要调整时间间隔
+        })
+
+//点击事件函数
+        $('.jsy1, .jsy2, .jsy3').click(function(e) {
+            e.preventDefault();
+            // 移除同组所有标签的active类
+            $(this).siblings().removeClass('active');
+            // 给当前点击的标签添加active类
+            $(this).addClass('active');
+            const element = ['echart211','echart212','echart213'];
+            // 根据点击的标签更新图表数据
+            $(element.map(id => '#' + id).join(',')).removeClass('active');
+            if ($(this).hasClass('jsy1')) {
+                // 更新为第一种数据
+                $('#' + element[0]).addClass('active');
+                echarts_211();
+            } else if ($(this).hasClass('jsy2')) {
+                // 更新为第二种数据
+                $('#' + element[1]).addClass('active');
+                echarts_212();
+            } else {
+                // 更新为第三种数据
+                $('#' + element[2]).addClass('active');
+                echarts_213();
+            }
+        });
+
+        $('.tr01, .tr02, .tr03').click(function(e) {
+            e.preventDefault();
+            // 移除同组所有标签的active类
+            $(this).siblings().removeClass('active');
+            // 给当前点击的标签添加active类
+            $(this).addClass('active');
+            const element = ['echart221','echart222','echart223'];
+            // 根据点击的标签更新图表数据
+            $(element.map(id => '#' + id).join(',')).removeClass('active');
+            if ($(this).hasClass('tr01')) {
+                // 更新为第一种数据
+                $('#' + element[0]).addClass('active');
+                echarts_221();
+            } else if ($(this).hasClass('tr02')) {
+                // 更新为第二种数据
+                $('#' + element[1]).addClass('active');
+                echarts_222();
+            } else {
+                // 更新为第三种数据
+                $('#' + element[2]).addClass('active');
+                echarts_223();
+            }
+        });
+
+        $('.st01, .st02, .st03').click(function(e) {
+            e.preventDefault();
+            // 移除同组所有标签的active类
+            $(this).siblings().removeClass('active');
+            // 给当前点击的标签添加active类
+            $(this).addClass('active');
+            const element = ['echart231','echart232','echart233'];
+            // 根据点击的标签更新图表数据
+            $(element.map(id => '#' + id).join(',')).removeClass('active');
+            if ($(this).hasClass('st01')) {
+                // 更新为第一种数据
+                $('#' + element[0]).addClass('active');
+                echarts_231();
+            } else if ($(this).hasClass('st02')) {
+                // 更新为第二种数据
+                $('#' + element[1]).addClass('active');
+                echarts_232();
+            } else {
+                // 更新为第三种数据
+                $('#' + element[2]).addClass('active');
+                echarts_233();
+            }
+        });
+        
     }
 )
 
