@@ -166,7 +166,7 @@ function echarts_map()
                             [
                                 {
                                     name: item[0],
-                                    value: geoCoordMap[item[0]].concat([213])
+                                    value: geoCoordMap[item[0]].concat([2131])
                                 }
                             ]
                         }
@@ -187,7 +187,7 @@ function echarts_map()
                     textStyle: 
                     {
                         color: '#fff',
-                        fontSize:24,
+                        fontSize:28,
                     }
                 },
         

@@ -61,10 +61,12 @@
 	<ul class="clearfix">
 		<li>
 			<div class="boxall">
+				<!--
 				<div class="alltitle">
 					{{ show_list_temp[1]["标题"] }}
 				</div>
-				<div class="sycm">
+				-->
+				<div class="sycm" style=" height:1.05rem">
 					<ul class="clearfix">
 						<li> <h2>{{ show_list_temp[1]["数值"][0] }}</h2> <span>{{ show_list_temp[1]["内容"][0] }}</span></li>
 						<li> <h2>{{ show_list_temp[1]["数值"][1] }}</h2> <span>{{ show_list_temp[1]["内容"][1] }}</span></li>
@@ -101,10 +103,17 @@
 				<div class="alltitle">
 					{{ show_list_temp[3]["标题"] }}
 				</div>
-				<div style="height: 3.47rem" id="echart1"></div>
-				<div class="boxfoot">
+				<div style="height: 1.82rem" id="echart1"></div>
+				<div class="boxfoot"></div>
+			</div> 
+			<div class="boxall">
+				<div class="alltitle">
+					{{ show_list_temp[4]["标题"] }}
 				</div>
-			</div> </li>
+				<div style="height: 2.99rem" id="echart2"></div>
+				<div class="boxfoot"></div>
+			</div>
+		</li>
 		<li>
 			<div class="map">
 				<div class="map1">
@@ -121,45 +130,45 @@
 			</div>
 			<div class="boxall">
 				<div class="alltitle">
-					{{ show_list_temp[4]["标题"] }}
+					{{ show_list_temp[5]["标题"] }}
 				</div>
-				<div class="allnav" style="height: 1.86rem; " id="echart2">
+				<div class="allnav" style="height: 3rem; " id="echart3">
 				</div>
 				<div class="boxfoot"></div>
 			</div> </li>
 		<li>
-			<div class="boxall" style="height: 6.3rem">
+			<div class="boxall" style="height: 6.38rem">
 				<div class="alltitle ">
-					{{ show_list_temp[5]["标题"] }}
+					{{ show_list_temp[6]["标题"] }}
 				</div>
-				<div class=" alltitle2">
-					{{ show_list_temp[5]["表一"][0] }}
+				<div class=" alltitle2" style="color:rgba(255,255,255,0);">
+					{{ show_list_temp[6]["表一"][0] }}
 					<div class="titabs">
-						<a class="active jsy1" href="">{{ show_list_temp[5]["表一"][1] }}</a>
-						<a class="jsy2" href="">{{ show_list_temp[5]["表一"][2] }}</a>
-						<a class="jsy3" href="">{{ show_list_temp[5]["表一"][3] }}</a>
+						<a class="active jsy1" href="">{{ show_list_temp[6]["表一"][1] }}</a>
+						<a class="jsy2" href="">{{ show_list_temp[6]["表一"][2] }}</a>
+						<a class="jsy3" href="">{{ show_list_temp[6]["表一"][3] }}</a>
 					</div>
 				</div>
 				<div class="active allnav21" id="echart211"></div>
 				<div class="active allnav21" id="echart212"></div>
 				<div class="active allnav21" id="echart213"></div>
-				<div class=" alltitle2">
-					{{ show_list_temp[5]["表二"][0] }}
+				<div class=" alltitle2" style="color:rgba(255,255,255,0);">
+					{{ show_list_temp[6]["表二"][0] }}
 					<div class="titabs">
-						<a class="active tr01" href="">{{ show_list_temp[5]["表二"][1] }}</a>
-						<a class="tr02" href="">{{ show_list_temp[5]["表二"][2] }} </a>
-						<a class="tr03" href="">{{ show_list_temp[5]["表二"][3] }}</a>
+						<a class="active tr01" href="">{{ show_list_temp[6]["表二"][1] }}</a>
+						<a class="tr02" href="">{{ show_list_temp[6]["表二"][2] }} </a>
+						<a class="tr03" href="">{{ show_list_temp[6]["表二"][3] }}</a>
 					</div>
 				</div>
 				<div class="active allnav22" id="echart221"></div>
 				<div class="active allnav22" id="echart222"></div>
 				<div class="active allnav22" id="echart223"></div>
-				<div class=" alltitle2">
-					{{ show_list_temp[5]["表三"][0] }}
+				<div class=" alltitle2" style="color:rgba(255,255,255,0);">
+					{{ show_list_temp[6]["表三"][0] }}
 					<div class="titabs">
-						<a class="active st01" href="">{{ show_list_temp[5]["表三"][1] }}</a>
-						<a class="st02" href="">{{ show_list_temp[5]["表三"][2] }} </a>
-						<a class="st03" href="">{{ show_list_temp[5]["表三"][3] }}</a>
+						<a class="active st01" href="">{{ show_list_temp[6]["表三"][1] }}</a>
+						<a class="st02" href="">{{ show_list_temp[6]["表三"][2] }} </a>
+						<a class="st03" href="">{{ show_list_temp[6]["表三"][3] }}</a>
 					</div>
 				</div>
 				<div class="active allnav23" id="echart231"></div>
@@ -167,11 +176,11 @@
 				<div class="active allnav23" id="echart233"></div>
 				<div class="boxfoot"></div>
 			</div>
-			<div class="boxall" style="height: 2.6rem;">
+			<div class="boxall" style="height: 3.62rem;">
 				<div class="alltitle">
-					{{ show_list_temp[6]["标题"] }}
+					{{ show_list_temp[7]["标题"] }}
 				</div>
-					<div class="boxnav" id="echart3" style="height:calc(100% - .3rem);"></div>
+					<div class="boxnav" id="echart4" style="height:calc(100% - .3rem);"></div>
 				<div class="boxfoot"></div>
 			</div> </li>
 	</ul>

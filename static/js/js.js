@@ -4,6 +4,7 @@ const data_list =
 [
     [                                                                       
         ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12'],
+        ['单位：人次','单位：人次','单位：人次'],
         //echarts_211
         [503, 660, 300, 520, 720, 513, 430, 860, 530, 730, 930, 830],
         //echarts_212
@@ -44,6 +45,14 @@ const data_list =
     ],
     //echarts_3
     [
+        ['去年同期', '2025年'],
+        ['单位：亿元'],
+        ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        [198.3, 72.4, 86.1, 50.1, 52.3, 77.2, 66.8, 70.42, 64.9, 40.5, 47.8, 55.2 ],
+        [190.1, 78.8, 88.8, 54.2, 65.1, '', '', '', '', '', '', ''],
+    ],
+    //echarts_4
+    [
         ['总体','第一季度','第二季度','第三季度','第四季度'],
         ['527人',135, 93, 112, 87],
         ['{c|{c}人}', '{b|{b}}'],
@@ -66,6 +75,7 @@ $(
         echarts_1();
         echarts_2();
         echarts_3();
+        echarts_4();
 
 
         function echarts_211() 
@@ -137,7 +147,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                        //formatter: '{value} %'
+                            formatter: '{value}人',
                             show:true,
                             textStyle: 
                             {
@@ -172,7 +182,7 @@ $(
                 [
                     {
                         type: 'line',
-                        data: data_list[0][1],
+                        data: data_list[0][2],
                         itemStyle: 
                         {
                             normal: 
@@ -188,13 +198,13 @@ $(
         
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_211);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_212() 
@@ -266,7 +276,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                        //formatter: '{value} %'
+                            formatter: '{value}人',
                             show:true,
                             textStyle: 
                             {
@@ -317,13 +327,13 @@ $(
         
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_212);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_213() 
@@ -395,7 +405,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                        //formatter: '{value} %'
+                            formatter: '{value}人',
                             show:true,
                             textStyle: 
                             {
@@ -446,13 +456,13 @@ $(
         
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_213);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_221() 
@@ -526,7 +536,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                            //formatter: '{value} %'
+                            formatter: '{value} %',
                             show:true,
                             textStyle: 
                             {
@@ -576,13 +586,13 @@ $(
             };
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_221);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_222() 
@@ -656,7 +666,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                            //formatter: '{value} %'
+                            formatter: '{value} %',
                             show:true,
                             textStyle: 
                             {
@@ -706,13 +716,13 @@ $(
             };
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_222);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_223() 
@@ -786,7 +796,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                            //formatter: '{value} %'
+                            formatter: '{value} %',
                             show:true,
                             textStyle: 
                             {
@@ -836,13 +846,13 @@ $(
             };
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_223);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_231() 
@@ -863,7 +873,6 @@ $(
             }
             option_231 = 
             {
-                //backgroundColor: '#00265f',
                 tooltip: 
                 {
                     trigger: 'axis',
@@ -917,7 +926,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                            //formatter: '{value} %'
+                            formatter: '{value} %',
                             show:true,
                             textStyle: 
                             {
@@ -967,13 +976,13 @@ $(
             };
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_231);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_232() 
@@ -1048,7 +1057,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                            //formatter: '{value} %'
+                            formatter: '{value} %',
                             show:true,
                             textStyle: 
                             {
@@ -1098,13 +1107,13 @@ $(
             };
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_232);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_233() 
@@ -1179,7 +1188,7 @@ $(
                         type: 'value',
                         axisLabel: 
                         {
-                            //formatter: '{value} %'
+                            formatter: '{value} %',
                             show:true,
                             textStyle: 
                             {
@@ -1229,13 +1238,13 @@ $(
             };
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option_233);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_1() 
@@ -1347,13 +1356,13 @@ $(
     
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
-                    myChart.resize();
+                myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_2() 
@@ -1380,16 +1389,16 @@ $(
                     right: 'center', width:'100%',
                     textStyle: 
                     {
-                        color: "rgba(255,255,255,.5)"
+                        color: "rgba(255,255,255,.6)"
                     },
                     itemWidth: 12,
                     itemHeight: 10,
                 },
 
-                "xAxis": 
+                xAxis: 
                 [
                     {
-                        "type": "category",
+                        type: "category",
                         data: ['2022', '2023', '2024', '2025'],
                         axisLine:{ show: false,},
                         axisLabel:  
@@ -1397,7 +1406,7 @@ $(
                             textStyle: 
                             {
                                 fontSize:14,
-                                color: "rgba(255,255,255,.5)",
+                                color: "rgba(255,255,255,.6)",
                             },
                         },
                     },
@@ -1409,17 +1418,17 @@ $(
                         "name": data_list[4][0][4],
                         "nameTextStyle": 
                         {
-                            "color": "rgba(255,255,255,.5)", // 例如 "#ffffff" 或 "rgba(255,255,255,0.8)"
+                            "color": "rgba(255,255,255,.6)", // 例如 "#ffffff" 或 "rgba(255,255,255,0.8)"
                             "fontSize": 14, // 可选，调整名称字号
                         },
                         axisTick: {show: false},
                         splitLine: { show: false,},
                         axisLine: { show: false,},
-                        "axisLabel":
+                        axisLabel:
                         {
                             "show": true,
                             fontSize:14,
-                            color: "rgba(255,255,255,.5)"
+                            color: "rgba(255,255,255,.6)"
                         },
                         axisLine: 
                         {
@@ -1436,7 +1445,7 @@ $(
                         {
                             formatter: "{value} %",
                             fontSize:14,
-                            color: "rgba(255,255,255,.5)"},
+                            color: "rgba(255,255,255,.6)"},
                             axisTick: {show: false},
                             splitNumber:3,
                             axisLine: {show:false},//右线色
@@ -1558,13 +1567,13 @@ $(
                     
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
                 myChart.resize();
                 }
-            );
+            );*/
         }
 
         function echarts_3() 
@@ -1573,10 +1582,236 @@ $(
             var myChart = echarts.init(document.getElementById('echart3'));
             option = 
             {
+                tooltip: 
+                {
+                    trigger: 'axis',
+                    axisPointer: {type: 'shadow'},
+                    // formatter:'{c}' ,
+                },
+
+                grid: 
+                {
+                    left: '10',
+                    top: '30',
+                    right: '20',
+                    bottom: '0',
+                    containLabel: true
+                },
+
+                legend:
+                {
+                    data: data_list[5][0],
+                    right: 'center',
+                    top:0,
+                    textStyle:
+                    {
+                        color: "#fff"
+                    },
+                    itemWidth: 12,
+                    itemHeight: 10,
+                    // itemGap: 35
+                },
+                xAxis: 
+                [
+                    {
+                        type: 'category',
+                        data: data_list[5][2],
+                        boundaryGap: true,
+                        axisLabel:  
+                        {
+                            //rotate: -90,
+                            textStyle:
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize:14,
+                            },
+                        },
+                        axisLine: 
+                        {
+                            lineStyle: 
+                            { 
+                                color: 'rgba(255,255,255,.1)'
+                            }
+                        },
+                    }, 
+                    {
+                        axisPointer: {show: false},
+                        axisLine: {show: false},
+                        position: 'bottom',
+                        offset: 20,
+                    }
+                ],
+
+                yAxis: 
+                [
+                    {
+                        type: 'value',
+                        name: data_list[5][1][0],
+                        nameTextStyle: 
+                        {
+                            color: "rgba(255,255,255,.5)", // 例如 "#ffffff" 或 "rgba(255,255,255,0.8)"
+                            fontSize: 14, // 可选，调整名称字号
+                        },
+                        axisTick: {show: false},
+                    // splitNumber: 6,
+                        axisLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: 'rgba(255,255,255,.1)'
+                            }
+                        },
+                        axisLabel:  
+                        {
+                            formatter: "{value}",
+                            textStyle: 
+                            {
+                                color: "rgba(255,255,255,.6)",
+                                fontSize:14,
+                            },
+                        },
+                        splitLine: 
+                        {
+                            lineStyle: 
+                            {
+                                color: 'rgba(255,255,255,.1)'
+                            }
+                        }
+                    }
+                ],
+
+                series: 
+                [
+                    {
+                        name: data_list[5][0][0],
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'circle',
+                        symbolSize: 5,
+                        showSymbol: false,
+                        lineStyle: 
+                        {
+                            normal: 
+                            {
+                                color: 'rgba(228, 228, 126, 1)',
+                                width: 2
+                            }
+                        },
+                        areaStyle: 
+                        {
+                            normal: 
+                            {
+                                color: new echarts.graphic.LinearGradient
+                                (
+                                0, 0, 0, 1, 
+                                [
+                                    {
+                                    offset: 0,
+                                    color: 'rgba(228, 228, 126, .2)'
+                                    }, 
+                                    {
+                                    offset: 1,
+                                    color: 'rgba(228, 228, 126, 0)'
+                                    }
+                                ], 
+                                false
+                                ),
+                                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            }
+                        },
+                        itemStyle: 
+                        {
+                            normal: 
+                            {
+                                color: 'rgba(228, 228, 126, 1)',
+                                borderColor: 'rgba(228, 228, 126, .1)',
+                                borderWidth: 12
+                            }
+                        },
+                        data: data_list[5][3]
+                    }, 
+                    {
+                        name: data_list[5][0][1],
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'circle',
+                        symbolSize: 5,
+                        showSymbol: true,
+                        lineStyle: 
+                        {
+                            normal: 
+                            {
+                                color: 'rgba(255, 128, 128, 1)',
+                                width: 2
+                            }
+                        },
+                        areaStyle: 
+                        {
+                            normal: 
+                            {
+                                color: new echarts.graphic.LinearGradient
+                                (
+                                0, 0, 0, 1, 
+                                [
+                                    {
+                                    offset: 0,
+                                    color: 'rgba(255, 128, 128,.2)'
+                                    }, 
+                                    {
+                                    offset:1,
+                                    color: 'rgba(255, 128, 128, 0)'
+                                    }
+                                ],
+                                false
+                                ),
+                                shadowColor: 'rgba(0, 0, 0, 0.1)',
+                            }
+                        },
+                        itemStyle: 
+                        {
+                            normal: 
+                            {
+                                color: 'rgba(255, 128, 128, 1)',
+                                borderColor: 'rgba(255, 128, 128, .1)',
+                                borderWidth: 12
+                            }
+                        },
+                        label: 
+                        {
+                            show: true,
+                            zlevel: 10000,
+                            position: 'top',
+                            padding: 6,
+                            color: 'rgba(255, 255, 255, 0.6)',
+                            fontSize: 14,
+                            formatter: '{c}',
+                            fontWeight: 'bold'
+                        },
+                        data: data_list[5][4]
+                    }, 
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+            /*window.addEventListener
+            (
+                "resize",function()
+                {
+                myChart.resize();
+                }
+            );*/
+        }
+
+        function echarts_4() 
+        {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('echart4'));
+            option = 
+            {
                 title:
                 {
-                    text:data_list[5][1][0],
-                    subtext: data_list[5][0][0],
+                    text:data_list[6][1][0],
+                    subtext: data_list[6][0][0],
                     x:'center',
                     y:'40%',
                     textStyle:
@@ -1622,20 +1857,20 @@ $(
                         data: 
                         [
                             {
-                                value: data_list[5][1][1],
-                                name: data_list[5][0][1]
+                                value: data_list[6][1][1],
+                                name: data_list[6][0][1]
                             }, 
                             {
-                                value: data_list[5][1][2],
-                                name: data_list[5][0][2]
+                                value: data_list[6][1][2],
+                                name: data_list[6][0][2]
                             },
                             {
-                                value: data_list[5][1][3],
-                                name: data_list[5][0][3]
+                                value: data_list[6][1][3],
+                                name: data_list[6][0][3]
                             },
                             {
-                                value: data_list[5][1][4],
-                                name: data_list[5][0][4]
+                                value: data_list[6][1][4],
+                                name: data_list[6][0][4]
                             },
                         ].sort
                         (
@@ -1649,7 +1884,7 @@ $(
                         {
                             normal: 
                             {
-                                formatter: data_list[5][2].join('\n'),
+                                formatter: data_list[6][2].join('\n'),
                                 rich: 
                                 {
                                     c: 
@@ -1686,13 +1921,13 @@ $(
             };
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
-            window.addEventListener
+            /*window.addEventListener
             (
                 "resize",function()
                 {
                 myChart.resize();
                 }
-            );
+            );*/
         }
 
 //定时刷新函数
@@ -1820,7 +2055,35 @@ $(
                 echarts_233();
             }
         });
-        
+//
+        function handleResize() 
+        {
+            // 遍历所有缓存的图表实例并执行 resize
+            document.querySelectorAll('[myChart]').forEach(chartDom => 
+                {
+                    const myChart = chartDom.myChart;
+                    if (myChart && typeof myChart.resize === 'function') 
+                    {
+                        myChart.resize();
+                    }
+                }
+            );
+        }
+// 添加防抖包装
+        const debouncedResize = 
+        (
+            function() 
+            {
+                let timer = null;
+                return function(delay = 100) 
+                {
+                    clearTimeout(timer);
+                    timer = setTimeout(handleResize, delay);
+                };
+            }
+        )();
+        // 只绑定一次全局事件
+        window.addEventListener('resize', debouncedResize);
     }
 )
 
