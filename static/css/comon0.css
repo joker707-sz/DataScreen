@@ -109,14 +109,13 @@ a:hover{ color:#06c; text-decoration: none!important}
 
 
 
-.map{  position:relative;  z-index: 9;}
-.map4{ width: 100%; height:6.5rem;  position: relative;top: .3rem; z-index: 5; display: flex; justify-content: center; align-items: center;}
+.map{ top:.3rem ; height:7rem; position:relative;  z-index: 9;}
+.map4{ width: 100%; height:6.3rem;  position: relative;top: .2rem; z-index: 5; display: flex; justify-content: center; align-items: center;}/*height:6.5rem;top:.3rem*/
 .map4 img{width: 90%;}
 .map1,.map2,.map3{ position:absolute; opacity: .5}
-.map1{ width:6.43rem; z-index: 2;top:.45rem; left: .7rem;  animation: myfirst2 15s infinite linear;}
-.map2{ width:5.66rem; top:.85rem; left:1.2rem; z-index: 3; opacity: 0.2; animation: myfirst 10s infinite linear;}
-.map3{ width:5.18rem; top:1.07rem; left: 1.4rem; z-index: 1;}
-
+.map1{ width:6.43rem; z-index: 2;top:.45rem; left: .7rem;  animation: myfirst2 15s infinite linear;}/*top:.45rem*/
+.map2{ width:5.66rem; top:.85rem; left:1.2rem; z-index: 3; opacity: 0.2; animation: myfirst 10s infinite linear;}/*top:.85rem*/
+.map3{ width:5.18rem; top:1.07rem; left: 1.4rem; z-index: 1;}/*top:1.07rem*/
 
 
 

@@ -4,7 +4,7 @@ const data_list =
 [
     [                                                                       
         ['1', '2', '3', '4', '5','6', '7', '8', '9', '10','11', '12'],
-        ['单位：人次','单位：人次','单位：人次'],
+        ['人','人','人'],
         //echarts_211
         [503, 660, 300, 520, 720, 513, 430, 860, 530, 730, 930, 830],
         //echarts_212
@@ -145,9 +145,10 @@ $(
                 [
                     {
                         type: 'value',
+                        unit: data_list[0][1][0],
                         axisLabel: 
                         {
-                            formatter: '{value}人',
+                            formatter: '{value}{unit}',
                             show:true,
                             textStyle: 
                             {
@@ -1781,9 +1782,9 @@ $(
                             show: true,
                             zlevel: 10000,
                             position: 'top',
-                            padding: 6,
+                            padding: 1,
                             color: 'rgba(255, 255, 255, 0.6)',
-                            fontSize: 14,
+                            fontSize: 12,
                             formatter: '{c}',
                             fontWeight: 'bold'
                         },

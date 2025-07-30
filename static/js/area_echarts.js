@@ -183,7 +183,9 @@ function echarts_map()
                     text: '苏州地区本年度营销数据分布图',
                     subtext: '单位:万元',
                     left: 'center',
-                    top:'0',
+                    top:'1%',
+                    padding: [0, 0, 130, 0],
+                    //bottom: '10px',
                     textStyle: 
                     {
                         color: '#fff',
@@ -213,6 +215,7 @@ function echarts_map()
                 geo: 
                 {
                     map: 'suzhou',
+                    top: '15%',
                     //视角缩放比例
                     zoom: 1,
                     //显示文本样式
